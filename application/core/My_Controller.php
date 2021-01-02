@@ -29,14 +29,15 @@ class My_Controller extends CI_Controller
      * @param array $header
      * @return mixed
      */
-    public function http_request_post($url, $body = [], $header = []) {
+    public function http_request_post($url, $body = [], $header = [])
+    {
         $headr = [
             'Content-Type: application/json',
             'Accept: application/json'
         ];
 
 
-        if(!empty($header)) $headr = array_merge($headr, $header);
+        if (!empty($header)) $headr = array_merge($headr, $header);
 
         $crl = curl_init();
 
@@ -69,14 +70,15 @@ class My_Controller extends CI_Controller
      * @param array $header
      * @return mixed
      */
-    public function http_request_get($url, $body = [], $header = []) {
+    public function http_request_get($url, $body = [], $header = [])
+    {
         $headr = [
             'Content-Type: application/json',
             'Accept: application/json'
         ];
 
 
-        if(!empty($header)) $headr = array_merge($headr, $header);
+        if (!empty($header)) $headr = array_merge($headr, $header);
 
         $crl = curl_init();
 
@@ -106,11 +108,10 @@ class My_Controller extends CI_Controller
 
     private function base_url(string $environment)
     {
-        switch ($environment)
-        {
+        switch ($environment) {
             case 'development':
-                return 'http://localhost:7000/api/v1/';
-            default :
+                return 'http://localhost:7001/api/v1/';
+            default:
                 return '';
         }
     }
