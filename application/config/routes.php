@@ -49,23 +49,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller']        = 'welcome';
-$route['404_override']              = '';
-$route['translate_uri_dashes']      = FALSE;
+$route['default_controller'] = 'welcome';
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
 
-$route['auth/login']                = 'login';
-$route['auth/login/check']          = 'login/authLogin';
-$route['logout']                    = 'logout/authLogout';
+$route['auth/login'] = 'login';
+$route['auth/login/check'] = 'login/authLogin';
+$route['logout'] = 'logout/authLogout';
 
-$route['category']                  = 'category';
-$route['category/create']           = 'category/create';
+$route['category'] = 'category';
+$route['category/create'] = 'category/create';
 
-$route['product']                   = 'product';
-$route['orders']                    = 'orders';
-$route['transaction']               = 'transaction';
+$route['product'] = 'product';
+$route['product/create'] = 'product/create';
+$route['orders'] = 'orders';
+$route['transaction'] = 'transaction';
 
 // customers 
-$route['customer']                  = 'customers';
-$route['customer/(:num)']['get']    = 'customers/detail/$1';
+$route['customer'] = 'customers';
+$route['customer/(:num)']['get'] = 'customers/detail/$1';
 
-$route['account']                   = 'account';
+$route['account'] = 'account';

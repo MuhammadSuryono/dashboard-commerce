@@ -114,7 +114,7 @@ class My_Controller extends CI_Controller
                 return '';
         }
     }
-
+    
     private function set_base_url(string $environment)
     {
         $this->BASE_URL = $this->base_url($environment);

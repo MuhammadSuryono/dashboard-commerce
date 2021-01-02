@@ -10,7 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href=<?=base_url("/assets/plugins/fontawesome-free/css/all.min.css")?>>
     <!-- Ionicons -->
-    <link rel="stylesheet" href=<?=base_url("/assets/https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css")?>>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href=<?=base_url("/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")?>>
     <!-- iCheck -->
@@ -34,7 +34,7 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="<?=base_url().'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'?>">
     <!-- Select2 -->
-    <link rel="stylesheet" href="<?=base_url().'asssets/plugins/select2/css/select2.min.css'?>">
+    <link rel="stylesheet" href="<?=base_url().'assets/plugins/select2/css/select2.min.css'?>">
     <link rel="stylesheet" href="<?=base_url().'assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'?>">
     <?php
     for ($i = 0; $i < count($css); $i++)
@@ -153,6 +153,8 @@ for ($i = 0; $i < count($javascript); $i++)
     })
 </script>
 <script>
+
+
     $(function () {
         //Initialize Select2 Elements
         $('.select2').select2()
