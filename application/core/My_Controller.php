@@ -110,7 +110,7 @@ class My_Controller extends CI_Controller
     {
         switch ($environment) {
             case 'development':
-                return 'http://localhost:7001/api/v1/';
+                return 'http://localhost:7000/api/v1/';
             default:
                 return '';
         }

@@ -145,17 +145,17 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: 'http://localhost:7001/api/v1/' + uri,
+                        url: 'http://localhost:7000/api/v1/' + uri,
                         type: 'DELETE',
                         success: function(result) {
                             console.log(result);
                             if (result.status) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                )
                                 setInterval(() => {
-                                    Swal.fire(
-                                        'Deleted!',
-                                        'Your file has been deleted.',
-                                        'success'
-                                    )
                                     window.location.reload();
 
                                 }, 1000)
