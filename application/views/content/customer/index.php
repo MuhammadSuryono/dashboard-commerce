@@ -26,7 +26,7 @@
                         <td><?= $customer->address ?></td>
                         <td><?= $customer->phone_number ?></td>
                         <td>
-                            <button class="btn btn-xs btn-primary"><i class="fas fa-eye"></i> Detail</button>
+                            <a href="<?= base_url() . 'customer/' . $customer->id ?>" class="btn btn-xs btn-primary"><i class="fas fa-eye"></i> Detail</a>
                         </td>
                     </tr>
                 <?php } ?>

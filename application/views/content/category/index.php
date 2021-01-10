@@ -6,30 +6,30 @@
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
-            <tr>
-                <th width="10px">No</th>
-                <th class="text-center">Category Name</th>
-                <th class="text-center">Created</th>
-                <th class="text-center">Updated</th>
-                <th class="text-center">Action</th>
-            </tr>
+                <tr>
+                    <th width="10px">No</th>
+                    <th class="text-center">Category Name</th>
+                    <th class="text-center">Created</th>
+                    <th class="text-center">Updated</th>
+                    <th class="text-center">Action</th>
+                </tr>
             </thead>
             <tbody>
-            <?php
-            $no = 1;
-            foreach ($categories->data as $category) {
-            ?>
-            <tr>
-                <td><?=$no++?></td>
-                <td><?=$category->category_name?></td>
-                <td><?=date('Y-m-d h:i:s', strtotime($category->created_at))?></td>
-                <td><?=date('Y-m-d h:i:s', strtotime($category->updated_at))?></td>
-                <td>
-                    <button class="btn btn-xs btn-success"><i class="fas fa-edit"></i> Edit</button>
-                    <button class="btn btn-xs btn-danger button-delete" data-id="satu"><i class="fas fa-trash-alt"></i> Delete</button>
-                </td>
-            </tr>
-            <?php } ?>
+                <?php
+                $no = 1;
+                foreach ($categories->data as $category) {
+                ?>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $category->category_name ?></td>
+                        <td><?= date('Y-m-d h:i:s', strtotime($category->created_at)) ?></td>
+                        <td><?= date('Y-m-d h:i:s', strtotime($category->updated_at)) ?></td>
+                        <td>
+                            <button class="btn btn-xs btn-success"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-xs btn-danger button-delete" data-uri="<?= 'category/' . $category->id ?>"><i class="fas fa-trash-alt"></i> Delete</button>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
@@ -46,7 +46,6 @@
                 </button>
             </div>
             <form action="<?=base_url().'category/create'?>" enctype="multipart/form-data" method="post">
-            <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputRounded0">Category Name</label>
                         <input type="text" class="form-control rounded-0" id="exampleInputRounded0" name="category_name" placeholder="Shoes" required>

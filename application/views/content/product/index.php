@@ -1,8 +1,7 @@
 <div class="card">
     <div class="card-header">
         <h5 class="card-title">
-            <button class="btn btn-primary btn-sm btn-flat" data-toggle="modal" data-target="#modal-add-product"><i
-                        class="fas fa-plus-circle"></i> Create New Product
+            <button class="btn btn-primary btn-sm btn-flat" data-toggle="modal" data-target="#modal-add-product"><i class="fas fa-plus-circle"></i> Create New Product
             </button>
         </h5>
     </div>
@@ -10,36 +9,35 @@
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
-            <tr>
-                <th width="10px">No</th>
-                <th class="text-center">Product Code</th>
-                <th class="text-left">Product Name</th>
-                <th class="text-center">Category</th>
-                <th class="text-center">Stock</th>
-                <th class="text-center">Images</th>
-                <th class="text-center">Action</th>
-            </tr>
+                <tr>
+                    <th width="10px">No</th>
+                    <th class="text-center">Product Code</th>
+                    <th class="text-left">Product Name</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-center">Stock</th>
+                    <th class="text-center">Images</th>
+                    <th class="text-center">Action</th>
+                </tr>
             </thead>
             <tbody>
-            <?php
-            $no = 1;
-            foreach ($products->data as $product) {
+                <?php
+                $no = 1;
+                foreach ($products->data as $product) {
                 ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $product->item_code ?></td>
-                    <td><?= $product->item_name ?></td>
-                    <td><?= $product->category_name ?></td>
-                    <td><?= $product->stock ?></td>
-                    <td></td>
-                    <td>
-                        <button class="btn btn-xs btn-success"><i class="fas fa-edit"></i> Edit</button>
-                        <button class="btn btn-xs btn-danger button-delete" data-id="satu"><i
-                                    class="fas fa-trash-alt"></i> Delete
-                        </button>
-                    </td>
-                </tr>
-            <?php } ?>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $product->item_code ?></td>
+                        <td><?= $product->item_name ?></td>
+                        <td><?= $product->category_name ?></td>
+                        <td><?= $product->stock ?></td>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-xs btn-success"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-xs btn-danger button-delete" data-id="<?= $product->id ?>" data-uri="<?= 'product/' . $product->id ?>"><i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
