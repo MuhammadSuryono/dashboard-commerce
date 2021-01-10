@@ -44,4 +44,18 @@ class Orders extends My_Controller
         $this->parseData['orders'] = $data->data;
         $this->load->view('index', $this->parseData);
     }
+	
+	public function detail($order_id)
+	{
+		$data = $this->http_request_get($this->BASE_URL.'order/order-id/'.$order_id);
+		$this->parseData['title_budge'] = 'Orders Detail' ;
+        $this->parseData['title_tab'] = 'Orders Detail';
+        $this->parseData['content'] = 'content/order/detail-order';
+        $this->parseData['javascript'] = $this->js;
+        $this->parseData['css'] = $this->css;
+		$this->parseData['orderId'] = $order_id;
+		$this->parseData['details'] = $data->data;
+        $this->load->view('index', $this->parseData);
+	}
+	
 }

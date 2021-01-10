@@ -63,7 +63,10 @@ $route['category/create'] = 'category/create';
 $route['product'] = 'product';
 $route['product/create'] = 'product/create';
 $route['orders'] = 'orders';
+$route['orders/(:any)'] = 'orders/detail/$1';
 $route['transaction'] = 'transaction';
+$route['transaction/(:any)'] = 'transaction/detail/$1';
+
 
 // customers 
 $route['customer'] = 'customers';

@@ -28,7 +28,7 @@
                 <td><?=$transaction->payment_type?></td>
                 <td><?=$transaction->transaction_time?></td>
                 <td>
-                    <button class="btn btn-xs btn-primary"><i class="fas fa-eye"></i> Detail</button>
+                    <a class="btn btn-xs btn-primary" href="<?=base_url(). "transaction/". $transaction->order_id?>"><i class="fas fa-eye"></i> Detail</a>
                 </td>
             </tr>
             <?php } ?>

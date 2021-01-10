@@ -45,11 +45,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?=base_url().'category/create'?>" method="post">
+            <form action="<?=base_url().'category/create'?>" enctype="multipart/form-data" method="post">
             <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputRounded0">Category Name</label>
                         <input type="text" class="form-control rounded-0" id="exampleInputRounded0" name="category_name" placeholder="Shoes" required>
+                    </div>
+					<div class="form-group">
+                        <label for="exampleInputRounded0">Images</label>
+                        <input type="file" class="form-control rounded-0" id="exampleInputRounded0" name="images" placeholder="Select Image" required>
                     </div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -77,6 +81,10 @@
                     <div class="form-group">
                         <label for="exampleInputRounded0">Category Name</label>
                         <input type="text" class="form-control rounded-0" id="exampleInputRounded0" placeholder="Shoes">
+                    </div>
+					<div class="form-group">
+                        <label for="exampleInputRounded0">Image</label>
+                        <input type="file" class="form-control rounded-0" id="exampleInputRounded0" name="category_image" placeholder="Select Image" required>
                     </div>
                 </form>
             </div>

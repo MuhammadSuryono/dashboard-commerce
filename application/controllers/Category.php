@@ -49,11 +49,30 @@ class Category extends My_Controller
     public function create()
     {
         $category_name = $this->input->post('category_name');
-        $body = ["category_name" => $category_name];
+		$filename = "";
+        
+        $configUpload['upload_path']    = './assets/images_product/';                 #the folder placed in the root of project
+        $configUpload['allowed_types']  = 'gif|jpg|png|bmp|jpeg';       #allowed types description
+        $configUpload['max_size']       = '0';                          #max size
+        $configUpload['max_width']      = '0';                          #max width
+        $configUpload['max_height']     = '0';                          #max height
+        $configUpload['encrypt_name']   = true;                         #encrypt name of the uploaded file
+        $this->load->library('upload', $configUpload);
+        if(!$this->upload->do_upload('images')){
+            $uploadedDetails    = $this->upload->display_errors();
+        }else{
+            $uploadedDetails    = $this->upload->data();   
+            $filename = $uploadedDetails['file_name']; 
+        }
+		
+		
+        $body = ["category_name" => $category_name, "category_image" => $filename];
         $reqPost = $this->http_request_post($this->BASE_URL.'category', $body);
         if ($reqPost->status)
         {
             redirect('category');
-        }
+        }else{
+			var_dump($reqPost);
+		}
     }
 }

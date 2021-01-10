@@ -28,7 +28,7 @@
                 <td><?=$order->order_status?></td>
                 <td><?=date('Y-m-d h:i:s', strtotime($order->created_at))?></td>
                 <td>
-                    <button class="btn btn-xs btn-primary"><i class="fas fa-eye"></i> Detail Order</button>
+                    <a class="btn btn-xs btn-primary" href="<?=base_url(). "orders/".$order->order_id?>"><i class="fas fa-eye"></i> Detail Order</a>
                 </td>
             </tr>
             <?php } ?>

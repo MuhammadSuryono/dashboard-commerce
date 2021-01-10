@@ -45,4 +45,17 @@ class Transaction extends My_Controller
         $this->parseData['transactions'] = $data->data;
         $this->load->view('index', $this->parseData);
     }
+	
+	public function detail($orderId)
+	{
+		$data = $this->http_request_get($this->BASE_URL.'transactions/detail/'.$orderId);
+		$this->parseData['title_budge'] = 'Transactions Detail' ;
+        $this->parseData['title_tab'] = 'Transactions Detail';
+        $this->parseData['content'] = 'content/transaction/detail-trabsaction';
+        $this->parseData['javascript'] = $this->js;
+        $this->parseData['css'] = $this->css;
+		$this->parseData['orderId'] = $orderId;
+		$this->parseData['transactions'] = $data->data;
+        $this->load->view('index', $this->parseData);
+	}
 }
