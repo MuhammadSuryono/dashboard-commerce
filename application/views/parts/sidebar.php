@@ -89,14 +89,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+<!--                <li class="nav-item">
                     <a href="<?= base_url('account') ?>" class="nav-link">
                         <i class="nav-icon fas fa-user-cog"></i>
                         <p>
                             Account
                         </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="<?= base_url() . 'logout' ?>" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
