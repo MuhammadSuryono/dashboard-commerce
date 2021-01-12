@@ -27,13 +27,13 @@
                 </div>
 				<div class="col-sm-4 invoice-col></div>
                 <!-- /.col -->
-                <div class="col-sm-4 invoice-col">
+                <div class="col-sm-8 invoice-col">
                   <b>Invoice #INV<?=$transactions->transaction_id?></b><br>
                   <br>
                   <b>Order ID:</b> <?=$orderId?><br>
 				  <b>Transaction ID:</b> <?=$transactions->transaction_id?></br>
                   <b>Payment Due:</b> <?=$transactions->transaction_time?><br>
-                  <b>Payment Number:</b> - <br>
+                  <b>Payment Number:</b> - <?=json_decode($transactions->detail_transactions)->va_numbers[0]->va_number." (BNI) "?></br>
 				  <b>Status:</b> <span class="badge badge-success"><?=$transactions->transaction_status?></span>
                 </div>
                 <!-- /.col -->
