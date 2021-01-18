@@ -29,9 +29,14 @@ class Welcome extends My_Controller {
 	 */
 	public function index()
 	{
+	    $data = $this->http_request_get($this->BASE_URL."report", [], [])->data;
         $this->parseData['title_budge'] = 'Dashboard';
         $this->parseData['title_tab'] = 'Dashboard';
         $this->parseData['content'] = 'content/index';
+        $this->parseData['product'] = $data->products;
+        $this->parseData['order'] = $data->order;
+        $this->parseData['category'] = $data->category;
+        $this->parseData['transaction'] = $data->transaction;
         $this->load->view('index', $this->parseData);
 	}
 }

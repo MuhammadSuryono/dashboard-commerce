@@ -65,6 +65,7 @@ $route['category/update'] = 'category/update';
 
 $route['product'] = 'product';
 $route['product/create'] = 'product/create';
+$route['product/update'] = 'product/update';
 $route['orders'] = 'orders';
 $route['orders/(:any)'] = 'orders/detail/$1';
 $route['transaction'] = 'transaction';

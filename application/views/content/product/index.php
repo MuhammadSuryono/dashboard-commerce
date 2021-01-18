@@ -26,11 +26,11 @@
                 ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $product->item_code ?></td>
+                        <td class="text-center"><?= $product->item_code ?></td>
                         <td><?= $product->item_name ?></td>
                         <td><?= $product->category_name ?></td>
-                        <td><?= $product->stock ?></td>
-                        <td></td>
+                        <td claas="text-center"><?= $product->stock ?></td>
+                        <td class="text-center"><img src="<?=base_url().'assets/images_product/'.$product->image?>" width="40%"></td>
                         <td>
                             <button class="btn btn-xs btn-success button-edit-product" data-id="<?= $product->id ?>"><i class="fas fa-edit"></i> Edit</button>
                             <button class="btn btn-xs btn-danger button-delete" data-id="<?= $product->id ?>" data-uri="<?= 'product/' . $product->id ?>"><i class="fas fa-trash-alt"></i> Delete
@@ -126,11 +126,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" enctype="multipart/form-data" id="create-product">
+            <form method="post" enctype="multipart/form-data" id="update-product">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputRounded0">Product Code</label>
-                        <input type="text" name="product_id" class="form-control rounded-0 product-id" placeholder="908959xxxx" required>
+                        <input type="text" name="product_id" class="form-control rounded-0 product-id" placeholder="908959xxxx" hidden required>
                         <input type="text" name="product_code" class="form-control rounded-0 product-code" placeholder="908959xxxx">
                     </div>
                     <div class="form-group">
@@ -147,7 +147,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputRounded0">Stock</label>
-                        <input type="text" class="form-control rounded-0" name="stock" placeholder="Detergen" value="0">
+                        <input type="text" class="form-control rounded-0 product-stock" name="stock" placeholder="Detergen" value="0">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputRounded0">Unit</label>
