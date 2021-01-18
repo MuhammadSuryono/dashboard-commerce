@@ -58,7 +58,10 @@ $route['auth/login/check'] = 'login/authLogin';
 $route['logout'] = 'logout/authLogout';
 
 $route['category'] = 'category';
+$route['category/list'] = 'category/list';
 $route['category/create'] = 'category/create';
+$route['category/update'] = 'category/update';
+
 
 $route['product'] = 'product';
 $route['product/create'] = 'product/create';

@@ -32,7 +32,7 @@
                         <td><?= $product->stock ?></td>
                         <td></td>
                         <td>
-                            <button class="btn btn-xs btn-success"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-xs btn-success button-edit-product" data-id="<?= $product->id ?>"><i class="fas fa-edit"></i> Edit</button>
                             <button class="btn btn-xs btn-danger button-delete" data-id="<?= $product->id ?>" data-uri="<?= 'product/' . $product->id ?>"><i class="fas fa-trash-alt"></i> Delete
                             </button>
                         </td>
@@ -102,6 +102,72 @@
                     <div class="form-group">
                         <label for="exampleInputRounded0">Description</label>
                         <input type="text" class="form-control rounded-0" name="description" placeholder="xxxx">
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default btn-sm btn-flat" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-sm btn-flat"><i class="fas fa-check"></i> Save
+                        changes
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="modal-edit-product">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title"><i class="fas fa-plus-circle"></i> Category - Add</h6>
+                <button type="button" id="product-close" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" enctype="multipart/form-data" id="create-product">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Product Code</label>
+                        <input type="text" name="product_id" class="form-control rounded-0 product-id" placeholder="908959xxxx" required>
+                        <input type="text" name="product_code" class="form-control rounded-0 product-code" placeholder="908959xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Product Name</label>
+                        <input type="text" name="product_name" class="form-control rounded-0 product-name" placeholder="Detergen">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Category</label>
+                        <select class="form-control rounded-0 product-category" name="product_category"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Price</label>
+                        <input type="number" class="form-control rounded-0 product-price" name="price" placeholder="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Stock</label>
+                        <input type="text" class="form-control rounded-0" name="stock" placeholder="Detergen" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Unit</label>
+                        <input type="text" class="form-control rounded-0 product-unit" name="unit" placeholder="Pax">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Weight <small class="text-red"><i>* in grams (gr)</i></small></label>
+                        <input type="text" class="form-control rounded-0 product-weight" name="weight" placeholder="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Color</label>
+                        <input type="text" class="form-control rounded-0 my-colorpicker1 product-color" name="color" placeholder="xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Image</label>
+                        <input type="file" class="form-control rounded-0" name="images">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRounded0">Description</label>
+                        <input type="text" class="form-control rounded-0 product-description" name="description" placeholder="xxxx">
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
