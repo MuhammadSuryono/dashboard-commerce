@@ -13,7 +13,7 @@
                 <img src="<?= base_url('/assets/dist/img/avatar4.png') ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><i class="fas fa-check-circle text-success font-weight-light"></i> <?= $this->session->userdata('name') ?></a>
+                <a href="#" class="d-block"><i class="fas fa-check-circle text-success font-weight-light"></i> <?= $this->session->userdata('username') ?></a>
             </div>
         </div>
 

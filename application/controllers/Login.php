@@ -23,7 +23,7 @@ class Login extends My_Controller
         $password = $this->input->post('password');
         if ($username == 'admin' && $password == 'admin') {
             $dataSession = [
-                'name' => 'Administrator',
+                'username' => 'Administrator',
                 'isLogin' => true,
                 'scope' => 'admin',
             ];

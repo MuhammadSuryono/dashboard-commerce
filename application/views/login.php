@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="<?=base_url().'assets/plugins/toastr/toastr.min.css'?>">
 
 </head>
-<body class="hold-transition login-page" style="background: url('https://2.bp.blogspot.com/-PPYxAsHH8ok/UoME7zJs0ZI/AAAAAAAAAA4/pohwxnREgnw/s1600/black+and+white+nature+wallpaper+hd+4.jpg')">
+<body class="hold-transition login-page"
+      style="background: url('https://i.ibb.co/HCJttD1/photo-2021-02-09-18-47-14.jpg'); background-size: cover">
 <div class="login-box shadow-lg">
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
