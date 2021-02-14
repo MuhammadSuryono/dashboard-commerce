@@ -70,6 +70,7 @@ $route['orders'] = 'orders';
 $route['orders/(:any)'] = 'orders/detail/$1';
 $route['transaction'] = 'transaction';
 $route['transaction/(:any)'] = 'transaction/detail/$1';
+$route['transaction/status-pengiriman/(:any)'] = 'transaction/UpdateStatusPengiriman/$1';
 
 
 // customers 

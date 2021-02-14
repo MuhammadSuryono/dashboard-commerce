@@ -16,7 +16,8 @@
     </div>
     <!-- info row -->
     <div class="row invoice-info">
-        <div class="col-sm-4 invoice-col">
+        <div class="col-sm-4 invoice-col"                    $selected = '';
+>
             Kepada :
             <address>
                 <strong><?= $transactions->shipper->recipents_name ?></strong><br>
@@ -36,14 +37,16 @@
         <b>Payment Due:</b> <?= $transactions->transaction_time ?><br>
         <b>Payment Number:</b>
         - <?= json_decode($transactions->detail_transactions)->va_numbers[0]->va_number . " (BNI) " ?></br>
-        <b>Status:</b> <span class="badge badge-success"><?= $transactions->transaction_status ?></span>
+        <b>Status:</b> <span class="badge badge-success"><?= $transactions->transaction_status ?></span><br>
+        <b>Status Pengiriman:</b> <span class="badge badge-warning"><?= $transactions->status_pengiriman ?></span>
+
     </div>
     <!-- /.col -->
 </div>
 <!-- /.row -->
 <div class="row mb-3">
     <div class="col-sm-4">
-        <form action="">
+        <form method="post" action="<?=base_url().'transaction/status-pengiriman/'.$transactions->transaction_id?>">
             <?php if ($transactions->status_pengiriman == "packing") {?>
                 <div class="form-group">
                     <label>Number Resi</label>
@@ -53,14 +56,13 @@
 
             <div class="form-group">
                 <label>Status Shipper</label>
-                <select class="form-control" name="status_pengiriman">
+                <select class="form-control" name="status_pengiriman" required>
                     <option value="">Select Status</option>
                     <?php
-                    $selected = '';
                     $options = [["value" => "packed", "label" => "Packed"], ["value" => "sent", "label" => "Sent"]];
 
                     foreach($options as $option) {
-
+                        $selected = '';
                         if ($transactions->status_pengiriman == $option["value"]){
                             $selected = 'selected';
                         }
