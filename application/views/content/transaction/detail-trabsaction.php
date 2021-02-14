@@ -38,7 +38,9 @@
         <b>Payment Number:</b>
         - <?= json_decode($transactions->detail_transactions)->va_numbers[0]->va_number . " (BNI) " ?></br>
         <b>Status:</b> <span class="badge badge-success"><?= $transactions->transaction_status ?></span><br>
-        <b>Status Pengiriman:</b> <span class="badge badge-warning"><?= $transactions->status_pengiriman ?></span>
+        <b>Status Recieper:</b> <span class="badge badge-warning"><?= $transactions->status_pengiriman ?></span><br>
+        <b>Number RESI:</b> <span class="badge badge-warning"><?= $transactions->number_resi ?></span>
+
 
     </div>
     <!-- /.col -->
